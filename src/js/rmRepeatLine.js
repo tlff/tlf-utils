@@ -1,4 +1,12 @@
+/**
+ * 判断数组中的各个元素是否相等,数组最少有两个元素
+ * @param {Array} arr 要判断的数组
+ * @returns {boolean} 相等返回元素的值,不相等返回false
+ */
 function isEqual(arr) {
+    if(!arr instanceof Array||arr.length<=0){
+        return false;
+    }
     let a = arr.reduce((a, b) => {
         if (a && a === b) {
             return a;
@@ -21,9 +29,9 @@ export function removeRepeatLine(line1, line2) {
     // let p1, p2, p3, p4;
     let a1, a2, b1, b2;
 
-    //横线
+    //判断俩线段是不是都是横线
     let w = isEqual([l1y1, l1y2, l2y1, l2y2]);
-    //竖线
+    //判断俩线段是不是都是竖线
     let h = isEqual([l1x1, l1x2, l2x1, l2x2]);
     if (w===false && h===false) {
         a1 = (l1y2 - l1y1) / (l1x2 - l1x1);
@@ -31,21 +39,26 @@ export function removeRepeatLine(line1, line2) {
         b1 = l1y1 - a1 * l1x1;
         b2 = l2y1 - a2 * l2x1;
     }
+    //判断俩个线段是否在一条直线上
     if ((a1 === a2 && b1 === b2) || w!==false || h!==false) {
         let l1, l2, c;
+        //投影到y轴,定义c
         if (h!==false) {
             l1 = [l1y1, l1y2];
             l2 = [l2y1, l2y2];
             c = y => [h,y];
         }else if(w!==false){
+            //投影到x轴,定义c
             l1 = [l1x1, l1x2];
             l2 = [l2x1, l2x2];
             c = y => [y,w];
         } else {
+            //投影到x轴,定义c
             l1 = [l1x1, l1x2];
             l2 = [l2x1, l2x2];
             c = x => [x, a1 * x + b1];
         }
+        //给投影排序
         let l11 = {
             begin: Math.min(...l1),
             end: Math.max(...l1)
@@ -69,6 +82,7 @@ export function removeRepeatLine(line1, line2) {
                 [...c(l22.begin), ...c(l22.end)]
             ]
         } else {
+            //有重合部分
             ret = [
                 [...c(min), ...c(max)]
             ]
