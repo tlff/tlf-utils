@@ -43,13 +43,13 @@ module.exports = {
     },
 
     plugins: [
-        // new HtmlWebpackPlugin({
-        //     filename: "./view/index.html",
-        //     template: './src/view/index.html',
-        //     hash: false,
-        //     inject: true,
-        //     chunksSortMode: 'auto',
-        // }),
+        new HtmlWebpackPlugin({
+            filename: "./view/index.html",
+            template: './src/view/index.html',
+            hash: false,
+            inject: true,
+            chunksSortMode: 'auto',
+        }),
         new CleanWebpackPlugin(dist),
         // new webpack.ProvidePlugin({
         //     $: "jquery",

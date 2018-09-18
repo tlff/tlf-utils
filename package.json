@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "test": "mocha --compilers js:babel-register --recursive",
+    "test": "karma start",
     "build": "webpack  --config webpack.prod.js",
     "start": "webpack-dev-server --inline --config webpack.dev.js --open",
     "watch": "webpack --config webpack.watch.js --watch"
@@ -42,7 +42,10 @@
   "directories": {
     "test": "test"
   },
-  "dependencies": {},
+  "dependencies": {
+    "jquery": "^3.3.1",
+    "mockjs": "^1.0.1-beta3"
+  },
   "keywords": [
     "tlf"
   ],
