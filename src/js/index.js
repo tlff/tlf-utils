@@ -1,5 +1,5 @@
 // import { removeRepeatLine } from "./rmRepeatLine";
-import bc from "./event";
+import bc from "../../publish/dist/event";
 class a extends bc{
     constructor(){
         super();
