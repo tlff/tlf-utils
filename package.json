@@ -1,0 +1,20 @@
+{
+  "name": "tlf-utils",
+  "version": "1.1.1",
+  "description": "常用的函数",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "files": [
+    "dist"
+  ],
+  "types": "./dist/index.d.ts",
+  "keywords": [
+    "utils",
+    "tlf"
+  ],
+  "author": "tlf",
+  "license": "MIT",
+  "dependencies": {}
+}
