@@ -1,5 +1,5 @@
 export async function copy(val:string){
-    if (navigator.clipboard && await navigator.permissions.query({name:"clipboard-write"})) {
+    if (navigator.clipboard && await navigator.permissions.query({name:"clipboard-write" as PermissionName})) {
         navigator.clipboard.writeText(val)
       } else {
         const textArea = document.createElement('textarea');

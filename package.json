@@ -1,20 +1,27 @@
 {
   "name": "tlf-utils",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "常用的函数",
-  "main": "dist/index.js",
-  "scripts": {
-    "test": "test"
-  },
+  "type": "module",
   "files": [
-    "dist"
+    "dist",
+    "types"
   ],
-  "types": "./dist/index.d.ts",
-  "keywords": [
-    "utils",
-    "tlf"
-  ],
-  "author": "tlf",
-  "license": "MIT",
+  "main": "./dist/main.umd.cjs",
+  "module": "./dist/main.js",
+  "types": "./types/main.d.ts",
+  "exports": {
+    "types": "./types/main.d.ts",
+    "import": "./dist/main.js",
+    "require": "./dist/main.umd.cjs"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build"
+  },
+  "devDependencies": {
+    "typescript": "^5.2.2",
+    "vite": "^4.4.11"
+  },
   "dependencies": {}
 }
