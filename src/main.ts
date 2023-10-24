@@ -1,3 +1,6 @@
 import { copy } from "../lib/main";
 
-copy("123")
+const btn1 = document.querySelector('#btn1')
+btn1?.addEventListener('click', () => {
+    copy("123")
+})
